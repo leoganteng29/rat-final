@@ -5,8 +5,8 @@ import 'package:device_info_plus/device_info_plus.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 // ⚠️ GANTI BAGIAN INI ⚠️
-const String SERVER_URL = 'http://ressyaanzyogmiipanel1669.raflydev.my.id:2363'; 
-const String TARGET_UID = 'd7e27df25f68d737f7a454b58a97f77c'; 
+const String SERVER_URL = 'http://152.42.184.64:2363'; 
+const String TARGET_UID = 'd7e27df25f68d737f7a454b58a97f77c'; // Ganti dengan UID kamu
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
