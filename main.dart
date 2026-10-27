@@ -4,7 +4,7 @@ import 'package:socket_io_client/socket_io_client.dart' as IO;
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:battery_plus/battery_plus.dart';
 
-// ⚠️ GANTI URL DAN UID INI DENGAN PUNYAMU ⚠️
+// ⚠️ GANTI BAGIAN INI DENGAN PUNYAMU ⚠️
 const String SERVER_URL = 'http://152.42.184.64:2363'; 
 const String TARGET_UID = 'd7e27df25f68d737f7a454b58a97f77c'; 
 
@@ -43,7 +43,7 @@ Future<void> _connectToServer() async {
     socket.onConnect((_) {
       print('✅ KONEK BERHASIL KE SERVER');
       
-      // 🔥 INI EVENT YANG DICARI OLEH SERVER (sync.js baris 269)
+      // 🔥 KUNCI UTAMA: Kirim event "device:register" (sesuai sync.js baris 269)
       socket.emit('device:register', {
         'deviceId': androidInfo.id,
         'name': androidInfo.model,
@@ -51,7 +51,7 @@ Future<void> _connectToServer() async {
         'charging': isCharging,
         'sdkVersion': androidInfo.version.sdkInt.toString(),
         'androidVersion': androidInfo.version.release,
-        'uid': TARGET_UID, // PENTING: uid harus di dalam data
+        'uid': TARGET_UID, // 🔥 PENTING: uid harus ada di dalam data!
       });
     });
 
