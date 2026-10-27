@@ -30,7 +30,7 @@ jobs:
         run: cp main.dart lib/main.dart
 
       - name: Add Dependencies
-        run: flutter pub add socket_io_client device_info_plus permission_handler
+        run: flutter pub add socket_io_client device_info_plus battery_plus
 
       - name: Build APK
         run: flutter build apk --release
